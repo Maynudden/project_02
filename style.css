@@ -1,0 +1,75 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #f3f4f6;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background: #fff;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    margin-top: 1rem;
+    transition: border 0.3s ease;
+  }
+
+  .strength-bar {
+    margin-top: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #ddd;
+    transition: background 0.4s ease;
+  }
+
+  .strength-text {
+    margin-top: 12px;
+    font-weight: 600;
+    height: 24px;
+    color: #444;
+  }
+
+  input:valid ~ .strength-bar {
+    background: linear-gradient(to right, red, orange, green);
+  }
+  
+  input:valid ~ .strength-text::after {
+    content: "Strong Password ✔️";
+    color: green;
+  }
+  
+  input:invalid:not(:placeholder-shown) ~ .strength-bar {
+    background: red;
+  }
+  
+  input:invalid:not(:placeholder-shown) ~ .strength-text::after {
+    content: "Weak Password ❌ (Min 8 characters)";
+    color: red;
+  }
+  

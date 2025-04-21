@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Strength Checker (CSS Only)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Password Strength Checker</h2>
+    <form>
+      <input 
+        type="password" 
+        id="password" 
+        name="password" 
+        placeholder="Enter your password" 
+        pattern=".{8,}" 
+        required 
+      />
+      <div class="strength-bar"></div>
+      <div class="strength-text"></div>
+    </form>
+  </div>
+</body>
+</html>
